@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-
-
 /*リセットCSS（sanitize.css）の読み込み
 ---------------------------------------------------------------------------*/
 @import url("https://unpkg.com/sanitize.css");
@@ -10,12 +8,6 @@
 /*Font Awesomeの読み込み
 ---------------------------------------------------------------------------*/
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
-
-
-/*テンプレート専用cssファイルの読み込み
----------------------------------------------------------------------------*/
-@import url("animation.css");
-
 
 /*全体の設定
 ---------------------------------------------------------------------------*/
@@ -50,7 +42,7 @@ section + section {
 /*リンクテキスト全般の設定
 ---------------------------------------------------------------------------*/
 a {
-	color: #555;		/*文字色*/
+	color: #638dff;		/*文字色*/
 	transition: 0.3s;	/*hoverまでにかける時間。0.3秒。*/
 }
 
@@ -71,7 +63,7 @@ a:hover {
 }
 
 
-/*header（ロゴが入った最上段のブロック）
+/*header
 ---------------------------------------------------------------------------*/
 /*ヘッダーブロック*/
 header {
@@ -79,42 +71,10 @@ header {
 	background: #4b3255;		/*背景色*/
 	color: #fff;				/*文字色*/
 }
-header a {color: inherit;}
 
-/*ロゴ*/
-#logo img {display: block;}
-#logo {
-	max-width: 300px;	/*ロゴの幅*/
-}
-
-	/*画面幅900px以上の追加指定*/
-	@media screen and (min-width:900px) {
-
-	/*ヘッダーブロック*/
-	header {
-		display: flex;					/*flexボックスを使う指定*/
-		justify-content: space-between;	/*並びかたの種類の指定*/
-		align-items: center;			/*垂直揃えの指定。天地中央に配置されるように。*/
-	}
-
-	}/*画面幅900px以上の追加指定ここまで*/
-
-
-/*トップページのスライドショー（vegasを使用）
-背景画像をレスポンシブにする為の設定ですが、画像比率を変更したい場合はテンプレート内マニュアルをご覧下さい。
----------------------------------------------------------------------------*/
-#mainimg-box {
-	width: 100%;
-	height: 0;
-	padding-top: 33.3%;
-	position: relative;z-index: -1;
-}
-#mainimg {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
+/*h1タグ*/
+header h1 {
+	text-align: center;			/*テキストの位置*/
 }
 
 /*mainブロック設定
@@ -153,14 +113,14 @@ main p + p {
 	padding: 5px 0;		/*上下、左右へのボックス内の余白*/
 }
 
-/*日付(dt)設定*/
-#new dt {
-	width: 8rem;	/*幅。8文字(rem)分*/
-}
-
 /*日付の横のマーク（共通設定）*/
 #new dt span {
 	display: none;	/*小さな端末では非表示にしておく。*/
+}
+
+/*日付(dt)設定*/
+#new dt {
+	width: 2rem;	/*幅。8文字(rem)分*/
 }
 
 /*記事(dd)設定*/
@@ -173,7 +133,7 @@ main p + p {
 
 	/*日付(dt)設定*/
 	#new dt {
-		width: 14rem;	/*幅。14文字(rem)分。アイコン分も含んだ幅にします。*/
+		width: 10rem;	/*幅。10文字(rem)分。アイコン分も含んだ幅にします。*/
 		display: flex;	/*flexボックスを使う指定*/
 		justify-content: space-between;	/*日付とアイコンをそれぞれ端に寄せる*/
 	}
@@ -184,7 +144,6 @@ main p + p {
 		width: 6rem;			/*幅。6文字(rem)分。*/
 		font-size: 0.8rem;		/*文字サイズを80%に。*/
 		text-align: center;		/*文字をセンタリング*/
-		margin-right: 1rem;		/*アイコンの右側に空けるスペース*/
 		align-self: flex-start;	/*高さを間延びさせない指定*/
 		line-height: 1.8;		/*行間を少し狭く*/
 		position: relative;top: 0.4rem;	/*上下の配置バランスの微調整*/
@@ -208,21 +167,6 @@ main p + p {
 	}/*画面幅900px以上の追加指定ここまで*/
 
 
-/*box1設定（このテンプレートでは、2カラム時のsubブロックでのみ使用しています）
----------------------------------------------------------------------------*/
-/*ボックス全体の設定*/
-.box1 {
-	background: rgba(0,0,0,0.05);	/*背景色。0,0,0は黒の事で0.05は色が5%出た状態。*/
-	padding: 10px;					/*ボックス内の余白*/
-	border-radius: 5px;				/*角を丸くする指定*/
-	margin-bottom: 1rem;			/*ボックスの下に空けるスペース*/
-}
-
-/*box1内で使った場合、下のマージンをなくす*/
-.sub .box1 .submenu {
-	margin-bottom: 0;
-}
-
 /*フッター設定
 ---------------------------------------------------------------------------*/
 footer small {font-size: 100%;}
@@ -231,193 +175,9 @@ footer {
 	font-size: 0.6rem;		/*文字サイズ。remの単位についてはテンプレート内の解説をお読み下さい。*/
 	background: #4b3255;	/*背景色*/
 	color: #fff;			/*文字色*/
-	text-align: center;		/*内容をセンタリング*/
-	padding: 20px;			/*ボックス内の余白*/
-}
-
-/*リンクテキスト*/
-footer a {color: #fff;text-decoration: none;}
-
-/*リンクテキストのマウスオン時*/
-footer a:hover {color: #fff;}
-
-/*著作部分*/
-footer .pr {display: block;}
-
-/*2カラムブロック（※900px未満では１カラム）
----------------------------------------------------------------------------*/
-/*２カラムを囲むブロック*/
-.list-half .list {
-	display: flex;			/*flexボックスを使う指定*/
-	flex-direction: column;	/*子要素を縦並びにする*/
-	margin-bottom: 2rem;	/*ボックスの下に2文字分のスペースを空ける*/
-}
-
-/*画像ブロック共通*/
-.list-half .image-l, .list-half .image-r {
-	margin-left: 1rem;margin-right: 1rem;	/*画像の左右に1文字分のスペースを空ける*/
-	position: relative;						/*子要素のアイコンを絶対配置する為の設定*/
-}
-.list-half .image-l img, .list-half .image-r img {
-	border-radius: 50px;					/*角を丸くする指定。*/
-	box-shadow: 10px 10px rgba(0,0,0,0.1);	/*ボックスの影。右へ、下へ、0,0,0は黒の事で0.1は色が10%出た状態。*/
-}
-
-	/*画面幅900px以上の追加指定*/
-	@media screen and (min-width:900px) {
-
-		/*２カラムを囲むブロック*/
-		.list-half .list {
-			flex-direction: row;			/*子要素を横並びにする*/
-			justify-content: space-between;	/*並びかたの種類の指定*/
-			align-items: center;			/*垂直揃えの指定。天地中央に配置されるように。*/
-		}
-		
-		/*画像ブロック共通*/
-		.list-half .image-l, .list-half .image-r {
-			width: 50%;			/*幅。下のテキストブロックのwidthと調整して下さい。*/
-		}
-		
-		/*画像を右に配置する場合*/
-		.list-half .image-r {
-			margin-left: 2rem;	/*画像の左側に空けるスペース*/
-		}
-		
-		/*画像を左に配置する場合*/
-		.list-half .image-l {
-			order: -1;
-			margin-right: 2rem;	/*画像の右側に空けるスペース*/
-		}
-
-		/*テキストブロック*/
-		.list-half .text{
-			width: 50%;			/*幅。上の「画像ブロック共通」のwidthと調整して下さい。*/
-		}
-
-	}/*画面幅900px以上の追加指定ここまで*/
-
-
-/*３列タイプのボックス
----------------------------------------------------------------------------*/
-/*ボックス１個あたり*/
-.list-container .list {
-	margin-bottom: 30px;	/*ボックス同士の上下間に空けるスペース*/
-	padding: 20px;			/*ボックス内の余白*/
-	background: #fff;		/*背景色*/
-	box-shadow: 5px 5px 20px rgba(0,0,0,0.1);	/*ボックスの影。右へ、下へ、ぼかし幅、0,0,0は黒の事で0.1は色が10%出た状態。*/
-}
-
-/*ボックス内のh4タグ*/
-.list-container .list h4 {
-	margin: 0;
-}
-
-/*ボックス内のpタグ*/
-.list-container .list p {
-	margin: 0;
-	font-size: 0.8rem;	/*文字サイズを80%に*/
-	line-height: 1.5;	/*行間を少し狭く*/
-}
-
-/*ボックス内のfigure画像*/
-.list-container .list figure {
-	margin-bottom: 1rem;	/*下に空けるスペース*/
-}
-
-	/*画面幅900px以上の追加指定*/
-	@media screen and (min-width:900px) {
-
-	/*listブロック全体を囲むブロック*/
-	.list-container {
-		display: flex;		/*flexボックスを使う指定*/
-		flex-wrap: wrap;	/*折り返す指定*/
-	}
-
-	/*１個あたりのボックス設定*/
-	.list-container .list {
-		width: 32%;			/*幅。３列になります。*/
-		margin-right: 2%;	/*右側へのマージン。ボックス同士の左右の余白です。*/
-	}
-	
-	/*3の倍数目のボックスの右側のマージンをなくす*/
-	.list-container .list:nth-of-type(3n) {
-		margin-right: 0;
-	}
-
-	/*ボックス内のtextブロック*/
-	.list-container .list .text {
-		flex: 1;
-	}
-
-	}/*画面幅900px以上の追加指定ここまで*/
-
-
-/*横長タイプのボックス
----------------------------------------------------------------------------*/
-/*ボックス１個あたり*/
-.list-normal .list {
-	display: flex;	/*flexボックスを使う指定*/
-	border-bottom: 1px solid #ccc;	/*下線の幅、線種、色*/
-	padding: 25px 0;	/*上下、左右へのボックス内の余白*/
-}
-
-.list-normal .list div {
-	flex: 1;
-}
-
-/*１つ目のボックスにのみ上に線を入れる*/
-.list-normal .list:nth-of-type(1) {
-	border-top: 1px solid #ccc;	/*上の線の幅、線種、色*/
-}
-
-/*ボックス内のfigure画像*/
-.list-normal .list figure {
-	width: 20%;			/*画像の幅*/
-	margin-right: 20px;	/*画像の右側に空けるスペース*/
-}
-
-/*ボックス内のh4タグ*/
-.list-normal .list h4 {
-	margin: 0;				/*デフォルトマージンを一旦リセット*/
-	margin-bottom: 10px;	/*下に少し余白を作る*/
-}
-
-/*ボックス内のpタグ*/
-.list-normal .list p {
-	margin: 0;
-	font-size: 0.7rem;		/*文字サイズを70%に。*/
-}
-
-
-	/*画面幅900px以上の追加指定*/
-	@media screen and (min-width:900px) {
-	
-	/*list2ボックス。１個あたりのボックスの指定です。*/
-	.list-normal .list {
-		padding-left: 10px;	/*ボックス内の左側にだけ余白を作る*/
-	}
-
-	}/*画面幅900px以上の追加指定ここまで*/
-
-
-/*ulで使うbtn（当テンプレートではheader内でのみ使用）
----------------------------------------------------------------------------*/
-/*ボタンブロック全体*/
-ul.btn {
-	list-style: none;margin: 0;padding: 0;
-	display: flex;	/*flexボックスを使う指定*/
-}
-
-/*ボタン１個あたり*/
-ul.btn li {
-	box-shadow: 1px 2px 3px rgba(0,0,0,0.2);	/*ボックスの影。右へ、下へ、ぼかし幅、0,0,0は黒の事で0.2は色が20%出た状態。*/
-	margin: 2px;	/*ボタン同士の間に空けるスペース*/
-}
-ul.btn a {
-	display: block;text-decoration: none;
-	background: linear-gradient(#ff9000, #ff6000);/*「#ff9000」から「#ff6000」へのグラデーション。*/
-	padding: 0.2em 1.5em;	/*上下、左右へのボタン内の余白*/
-	border-radius: 3px;		/*角を丸くする指定*/
+	text-align: right;		/*テキストの位置*/
+	padding: 10px;			/*ボックス内の余白*/
+	padding-right: 10%;		/*右の余白*/
 }
 
 /*PAGE TOP（↑）設定
@@ -437,30 +197,3 @@ ul.btn a {
 	line-height: 60px;	/*高さ*/
 	border-radius: 50%;	/*円形にする*/
 }
-
-
-/*その他
----------------------------------------------------------------------------*/
-.clearfix::after {content: "";display: block;clear: both;}
-.color-check, .color-check a {color: #ff0000 !important;}
-.color-theme, .color-theme a {color: #88291a !important;}
-.c {text-align: center !important;}
-.r {text-align: right !important;}
-.ws {width: 98%;display: block;}
-.wl {width: 98%;display: block;}
-.mb30 {margin-bottom: 30px !important;}
-.look {display: inline-block;padding: 0px 10px;background: #eee;border: 1px solid #ccc; border-radius: 3px;margin: 5px 0; word-break: break-all;}
-.small {font-size: 0.75em;}
-.large {font-size: 3em; letter-spacing: 0.1em;}
-.pc {display: none;}
-.dn {display: none !important;}
-.img {margin: 0 0 1rem;}
-
-	/*画面幅900px以上の追加指定*/
-	@media screen and (min-width:900px) {
-
-		.ws {width: 48%;display: inline;}
-		.sh {display: none;}
-		.pc {display: block;}
-
-	}/*画面幅900px以上の追加指定ここまで*/
