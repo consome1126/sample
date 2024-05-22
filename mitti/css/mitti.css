@@ -1,0 +1,17 @@
+nav{
+    width: 500px;
+    background-color: rgb(0, 160, 152);
+    margin: 0 calc(50% - 50vw);
+     width: 100vw;
+      display: flex;
+      flex: auto;
+    }
+  
+  li{
+    display: inline-block;
+    list-style: none;
+    background-color: rgb(255, 255, 255);
+    margin: 0 50px; /* 各項目の間に余白を追加 */
+    padding: 5px; /* 項目の内側に余白を追加 */
+    border: 1px solid #910e0e; /* 項目に枠線を追加 */
+  }
