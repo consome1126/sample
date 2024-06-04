@@ -5,19 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>kouyouda yo!</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-text {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-text h2 {
+            margin: 0;
+            display: inline;
+        }
+
+        .header-text .author {
+            display: inline;
+            margin-left: 10px;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        .nav ul li {
+            margin: 0;
+        }
+
+        .nav ul li a {
+            color: white;
+            padding: 14px 20px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .nav ul li a:hover {
+            background-color: #575757;
+        }
+
+        #image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #kouyou-image {
+            max-width: 100%;
+            height: auto;
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.5s, visibility 0.5s, height 0.5s;
+        }
+
+        #kouyou-image.hidden {
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+        }
+
+        #toggle-button {
+            display: block;
+            margin: 0 auto 20px auto;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #toggle-button:hover {
+            background-color: #575757;
+        }
+
+        main {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer .nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        footer .nav ul li {
+            margin: 0 10px;
+        }
+
+        footer .gotop {
+            margin: 10px 0;
+        }
+
+        footer .gotop a img {
+            width: 50px;
+            height: auto;
+        }
+    </style>
 </head>
 <body id="top">
-    <!-- ヘッダー -->
-    <header class="header">
-        <h2 class="hero index">喜友名の出身校紹介ページ(作成者：河合)</h2>
-    </header>
-    <!-- ヘッダーここまで -->
+    <div class="header-text">
+        <h2 class="hero index">喜友名の出身校紹介ページ</h2>
+        <span class="author">(作成者：河合)</span>
+    </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="kyuuna.html">ホーム</a></li>
+            <li><a href="bukatu.html">野球部</a></li>
+            <li><a href="kouyouaccess.html">アクセス</a></li>
+        </ul>
+    </nav>
 
     <!-- メイン -->
     <main>
         <!-- 画像表示エリア -->
         <div id="image-container">
-            <img id="kouyou-image" src="images/kouyou.jpg" alt="kouyou">
+            <img id="kouyou-image" src="image/kouyou.jpg" alt="kouyou">
         </div>
         <!-- トグルボタン -->
         <button id="toggle-button">画像の表示/非表示</button>
@@ -53,10 +171,10 @@
     <script>
         document.getElementById('toggle-button').addEventListener('click', function() {
             var image = document.getElementById('kouyou-image');
-            if (image.style.display === 'none') {
-                image.style.display = 'block';
+            if (image.classList.contains('hidden')) {
+                image.classList.remove('hidden');
             } else {
-                image.style.display = 'none';
+                image.classList.add('hidden');
             }
         });
     </script>
