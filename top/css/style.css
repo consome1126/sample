@@ -1,0 +1,18 @@
+/*デジタル時計
+---------------------------------------------------------------------------*/
+.container {
+    width: 500px;
+    height: 200px;
+    border: 5px solid lightgray;
+    background-color: #ffffff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1px;
+  }
+  
+  .clock {
+    font-size: 80px;
+    color: #000000;
+  }
