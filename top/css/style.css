@@ -10,7 +10,18 @@
     justify-content: center;
     align-items: center;
     border-radius: 1px;
-  }
+}
+  
+.clock {
+    font-size: 80px;
+    color: #000000;
+}
+
+/*おみくじ
+---------------------------------------------------------------------------*/
+.omikuji img {
+    width: 100px;
+}
   
   .clock {
     font-size: 80px;
