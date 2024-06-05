@@ -38,10 +38,11 @@
         
         <!-- 押した数をカウントするボタン -->
         <div>
-
-
+           <!-- ボタンを押した数を表示するための要素 -->
+          <p>ボタンを押した回数: <span id="count">0</span></p>
+          <input type="button" value="ボタンを押す" onClick="incrementCount();">
             <!-- 上記ボタンのカウントをリセットするボタン -->
-
+            <input type="button" value="リセット" onClick="resetCount();">
         </div>
 
         <!-- テキストボックスに入力した数だけアラートメッセージを表示するボタン -->
@@ -117,5 +118,6 @@
 
     <!-- スクリプト -->
     <script src="js/main.js"></script>
+    
 </body>
 </html>
