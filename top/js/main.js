@@ -42,3 +42,16 @@ function result(){
     
     main.src = "images/" + image[random] + ".png";    
 }
+
+// 押した数をカウントするボタンの機能
+let count = 0;
+
+function incrementCount() {
+    count++;
+    document.getElementById('count').innerText = count;
+}
+
+function resetCount() {
+    count = 0;
+    document.getElementById('count').innerText = count;
+}
