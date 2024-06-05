@@ -42,12 +42,11 @@ section + section {
 /*リンクテキスト全般の設定
 ---------------------------------------------------------------------------*/
 a {
-	color: #638dff;		/*文字色*/
 	transition: 0.3s;	/*hoverまでにかける時間。0.3秒。*/
 }
 
 a:hover {
-	opacity: 0.8;	/*マウスオン時に80%の透明度にする*/
+	opacity: 0.4;	/*マウスオン時に80%の透明度にする*/
 }
 
 
@@ -77,6 +76,12 @@ header h1 {
 	text-align: center;			/*テキストの位置*/
 }
 
+/*h4タグ*/
+header h4 {
+	text-align: center;			/*テキストの位置*/
+	font-size: 20px;			/*テキストの大きさ*/
+}
+
 /*mainブロック設定
 ---------------------------------------------------------------------------*/
 /*mainブロックの設定*/
@@ -99,6 +104,26 @@ main p + p {
 
 #topImg {
 	width: 100%;
+}
+
+.nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.nav ul li {
+	margin: 0;
+}
+
+.nav ul li a {
+	color: #ffffff;
+	padding: 14px 20px;
+	display: block;
+	text-decoration: none;
+	font-size: 20px;
 }
 
 /*本文ブロック
@@ -170,18 +195,48 @@ main p + p {
 
 	}/*画面幅900px以上の追加指定ここまで*/
 
+/*見出し設定*/
+h2{
+	color: #350647;
+	font-size: 1.8em;
+	border-bottom: 2px solid #ddd;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+
+/*コメント設定*/
+.comment-box {
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	padding: 15px;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 4px #878787;
+}
+
+.comment-user {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.comment {
+	line-height: 1.6;
+}
 
 /*フッター設定
 ---------------------------------------------------------------------------*/
 footer small {font-size: 100%;}
 
 footer {
-	font-size: 0.6rem;		/*文字サイズ。remの単位についてはテンプレート内の解説をお読み下さい。*/
+	font-size: 0.6rem;		/*文字サイズ*/
 	background: #4b3255;	/*背景色*/
 	color: #fff;			/*文字色*/
-	text-align: right;		/*テキストの位置*/
+	text-align: center;		/*テキストの位置*/
 	padding: 10px;			/*ボックス内の余白*/
-	padding-right: 10%;		/*右の余白*/
 }
 
 /*PAGE TOP（↑）設定
