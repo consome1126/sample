@@ -1,9 +1,9 @@
 /*デジタル時計
 ---------------------------------------------------------------------------*/
 .container {
-    width: 500px;
-    height: 200px;
-    border: 5px solid lightgray;
+    width: 110px;
+    height: 30px;
+    border: 2px solid lightgray;
     background-color: #ffffff;
     position: relative;
     display: flex;
@@ -13,7 +13,7 @@
 }
   
 .clock {
-    font-size: 80px;
+    font-size: 20px;
     color: #000000;
 }
 
@@ -22,8 +22,3 @@
 .omikuji img {
     width: 100px;
 }
-  
-  .clock {
-    font-size: 80px;
-    color: #000000;
-  }
