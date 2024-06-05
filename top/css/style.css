@@ -83,6 +83,13 @@ header {
 /*h1タグ*/
 header h1 {
 	text-align: center;			/*テキストの位置*/
+    font-size: 50px;            /*テキストの大きさ*/
+}
+
+/*h4タグ*/
+header h4 {
+	text-align: center;			/*テキストの位置*/
+	font-size: 20px;			/*テキストの大きさ*/
 }
 
 
