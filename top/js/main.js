@@ -55,3 +55,17 @@ function resetCount() {
     count = 0;
     document.getElementById('count').innerText = count;
 }
+
+/*アラート表示*/
+document.getElementById('alert-button').addEventListener('click', function() {
+    const alertCount = parseInt(document.getElementById('alert-count').value);
+    
+    if (isNaN(alertCount) || alertCount < 1) {
+        alert('正しい数値を入力してください');
+        return;
+    }
+
+    for (let i = 0; i < alertCount; i++) {
+        alert(`アラート ${i + 1}`);
+    }
+});
